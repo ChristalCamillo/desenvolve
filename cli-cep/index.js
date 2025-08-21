@@ -22,5 +22,5 @@ function retornaEndereco(cep) {
 
 // chamando a função
 
-retornaEndereco('01001000')
+retornaEndereco('29090370')
     .then(endereco => console.log(endereco));
