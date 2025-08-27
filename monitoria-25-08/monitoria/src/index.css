@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.title {
+    background-color: aqua;
+}
+
+/* .bg-sky{
+    background-color: blue;
+} */
