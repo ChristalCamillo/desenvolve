@@ -1,5 +1,6 @@
 import { posts } from "@/data/posts";
 import { notFound } from "next/navigation";
+import LikeButton from "@/components/LikeButton";
 
 type Props = {
   params: {
@@ -25,6 +26,7 @@ export default function PostPage({ params }: Props) {
       <div>
         <h1 className="text-blue-500 text-3xl font-bold mb-4">{post.title}</h1>
         <p className="text-gray-200">{post.content}</p>
+        <LikeButton />
       </div>
     </main>
   );
