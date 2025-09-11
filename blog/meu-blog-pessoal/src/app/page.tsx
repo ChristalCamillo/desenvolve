@@ -1,11 +1,25 @@
 import Link from "next/link";
+import { posts } from "../data/posts";
 
 export default function HomePage() {
-    return (
-        <main>
-            <h1>Bem-vindo ao meu blog pessoal!</h1>
-            <p>Este é um espaço onde compartilho meus pensamentos, experiências e aprendizados sobre tecnologia, programação e desenvolvimento web.</p>
-            <p>Fique à vontade para explorar os artigos e deixar seus comentários. Espero que você encontre algo interessante aqui!</p>
-        </main>
-    )
+  return (
+    <main>
+      <div>
+        <h1 className="text-3xl font-bold mb-4">Posts</h1>
+        <ul className="space-y-2">
+          {/* `space-y-2` adiciona espaço vertical entre os itens da lista */}
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className=" text-lg text-blue-500 hover:underline"
+              >
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
+  );
 }
