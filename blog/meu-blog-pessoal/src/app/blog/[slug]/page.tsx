@@ -2,12 +2,26 @@ import { posts } from "@/data/posts";
 import { notFound } from "next/navigation";
 import LikeButton from "@/components/LikeButton";
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  //Recebe o 'slug' da URL através dos parâmetros
-  const slug = params.slug;
+// Informamos ao Next.js quais páginas devem ser geradas no build.
+// Esta função cria a os slugs dinâmicos.
+// ESSA SOLUÇÃO É PARA NEXT 13.4.7, VERSÕES MAIS RECENTES NÃO PRECISAM DESSA FUNÇÃO
+// CASO ESTEJA USANDO UMA VERSÃO MAIS RECENTE, COMENTE A FUNÇÃO ABAIXO
+// export async function generateStaticParams() {
+//   // Retornamos um array de objetos, onde cada objeto tem uma propriedade 'slug'
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }));
+// }
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function Page(props: PageProps) {
+  const { slug } = await props.params;
 
   // Encontra o post correspondente ao slug
-  const post = posts.find((post) => post.slug === params.slug);
+  const post = posts.find((p) => p.slug === slug);
 
   // Se o post não for encontrado, retorna uma página 404
   if (!post) {
