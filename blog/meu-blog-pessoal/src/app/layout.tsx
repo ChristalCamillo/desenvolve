@@ -18,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body
-        className={`${inter.className} bg-white text-black dark:bg-gray-900 dark:text-white`}
-      >
+      <body className={`${inter.className} bg-background text-foreground`}>
         <ThemeProvider>
           <Header /> {/* Inclui o cabeçalho em todas as páginas */}
           <main className="container mx-auto max-w-3xl p-4">

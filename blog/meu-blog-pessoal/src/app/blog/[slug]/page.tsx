@@ -32,8 +32,10 @@ export default async function Page(props: PageProps) {
   return (
     <main>
       <div>
-        <h1 className="text-blue-500 text-3xl font-bold mb-4">{post.title}</h1>
-        <p className="text-gray-200">{post.content}</p>
+        <h1 className="text-foreground text-3xl font-bold mb-4">
+          {post.title}
+        </h1>
+        <p className="text-muted-foreground">{post.content}</p>
         <LikeButton postSlug={post.slug} />
       </div>
     </main>
