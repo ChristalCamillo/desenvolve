@@ -4,7 +4,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 export default function Header() {
   return (
     <header className="py-4 mb-8 border-b">
-      <div className="container mx-auto flex justify-between items-center max-w-3xl">
+      <div className="container flex justify-between p-3 max-w-3xl">
         <h1 className="font-bold text-xl">
           <Link href="/">Meu Blog Pessoal</Link>
         </h1>

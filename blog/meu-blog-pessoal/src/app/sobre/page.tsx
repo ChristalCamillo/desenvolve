@@ -1,10 +1,15 @@
 import Link from "next/link";
 
-export default function SobrePage() { 
-    return (
-        <main>
-            <h1>Sobre mim</h1>
-            <p>Meu nome é João Vitor, tenho 20 anos e sou estudante de Análise e Desenvolvimento de Sistemas. Atualmente, estou no meu terceiro semestre e estou muito animado com o que o futuro reserva para mim na área de tecnologia.</p>
-        </main>
-    )
+export default function SobrePage() {
+  return (
+    <main>
+      <h1 className="text-2xl font-bold p-0.5">Sobre mim</h1>
+      <p>
+        Meu nome é João Vitor, tenho 20 anos e sou estudante de Análise e
+        Desenvolvimento de Sistemas. Atualmente, estou no meu terceiro semestre
+        e estou muito animado com o que o futuro reserva para mim na área de
+        tecnologia.
+      </p>
+    </main>
+  );
 }

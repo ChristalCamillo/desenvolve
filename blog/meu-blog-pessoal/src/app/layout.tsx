@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background text-foreground`}>
         <ThemeProvider>
           <Header /> {/* Inclui o cabeçalho em todas as páginas */}
-          <main className="container mx-auto max-w-3xl p-4">
+          <main className="container  max-w-3xl p-4">
             {children}
             {/* Esta é a parte mais importante. É uma propriedade especial no React. O Next.js a utiliza como um placeholder onde o conteúdo da page.tsx ativa será renderizado. */}
           </main>

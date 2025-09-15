@@ -4,7 +4,7 @@ import { posts } from "../data/posts";
 export default function HomePage() {
   return (
     <main>
-      <div>
+      <div className="text-left my-8">
         <h1 className="text-3xl font-bold mb-4">Posts</h1>
         <ul className="space-y-2">
           {/* `space-y-2` adiciona espaço vertical entre os itens da lista */}
