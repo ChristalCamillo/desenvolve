@@ -12,7 +12,7 @@ export default function HomePage() {
             <li key={post.id}>
               <Link
                 href={`/blog/${post.slug}`}
-                className=" text-lg text-blue-500 hover:underline"
+                className=" text-lg text-blue-600 dark:text-blue-400 hover:underline"
               >
                 {post.title}
               </Link>
