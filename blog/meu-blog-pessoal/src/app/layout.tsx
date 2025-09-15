@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
-// import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
-        <Header /> {/* Inclui o cabeçalho em todas as páginas */}
-        <main className="container mx-auto max-w-3xl p-4">
-          {children}
-          {/* Esta é a parte mais importante. É uma propriedade especial no React. O Next.js a utiliza como um placeholder onde o conteúdo da page.tsx ativa será renderizado. */}
-        </main>
+        <ThemeProvider>
+          <Header /> {/* Inclui o cabeçalho em todas as páginas */}
+          <main className="container mx-auto max-w-3xl p-4">
+            {children}
+            {/* Esta é a parte mais importante. É uma propriedade especial no React. O Next.js a utiliza como um placeholder onde o conteúdo da page.tsx ativa será renderizado. */}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
